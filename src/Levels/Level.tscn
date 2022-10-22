@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 960, 102.4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 960, 50 )
+
+[node name="Level" type="Node2D"]
+
+[node name="Row1" type="Area2D" parent="."]
+
+[node name="RowCollision" type="CollisionShape2D" parent="Row1"]
+position = Vector2( 960, 102 )
+shape = SubResource( 1 )
+
+[node name="Row2" type="Area2D" parent="."]
+
+[node name="RowCollision" type="CollisionShape2D" parent="Row2"]
+position = Vector2( 960, 307 )
+shape = SubResource( 1 )
+
+[node name="Row3" type="Area2D" parent="."]
+
+[node name="RowCollision" type="CollisionShape2D" parent="Row3"]
+position = Vector2( 960, 512 )
+shape = SubResource( 1 )
+
+[node name="Row4" type="Area2D" parent="."]
+
+[node name="RowCollision" type="CollisionShape2D" parent="Row4"]
+position = Vector2( 960, 718 )
+shape = SubResource( 1 )
+
+[node name="Row5" type="Area2D" parent="."]
+
+[node name="RowCollision" type="CollisionShape2D" parent="Row5"]
+position = Vector2( 960, 923 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 512.5 )
+script = ExtResource( 2 )
+
+[node name="SuperiorWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionWall" type="CollisionShape2D" parent="SuperiorWall"]
+position = Vector2( 960, -50 )
+shape = SubResource( 2 )
+
+[node name="InferiorWall" type="StaticBody2D" parent="."]
+position = Vector2( 0, 1024 )
+
+[node name="CollisionWall" type="CollisionShape2D" parent="InferiorWall"]
+position = Vector2( 960, 51 )
+shape = SubResource( 2 )
