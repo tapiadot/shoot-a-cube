@@ -1,4 +1,5 @@
 extends Node2D
+
 var speed: = 500
 
 func _physics_process(delta: float) -> void:
@@ -6,6 +7,5 @@ func _physics_process(delta: float) -> void:
 	if global_position.x <= -200:
 		queue_free()
 
-func _on_Brick_body_entered(body: Node) -> void:
-	if body is Player and body.has_method("die"):
-		body.die()
+func _on_StaticEnemy_body_entered(body: Node) -> void:
+	pass # Replace with function body.
