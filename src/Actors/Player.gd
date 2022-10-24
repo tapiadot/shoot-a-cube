@@ -2,10 +2,10 @@ extends KinematicBody2D
 class_name Player
 
 export var speed: = Vector2(400.0, 800.0)
-
 var _velocity: = Vector2.ZERO
-
 const Bullet: = preload("res://src/Actors/Bullet.tscn")
+onready var timer: = $Timer
+var can_shoot: = true
 
 func _process(delta: float) -> void:   
 	if Input.get_action_raw_strength("shoot") > 0:
@@ -33,7 +33,13 @@ func calculate_move_velocity(
 	return velocity
 	
 func shoot():
-	Bullet.instance()
-	var bullet: = Bullet.instance()
-	get_parent().add_child(bullet)
-	bullet.position = $Position2D.global_position
+	if can_shoot:
+		Bullet.instance()
+		var bullet: = Bullet.instance()
+		get_parent().add_child(bullet)
+		bullet.position = $Position2D.global_position
+		can_shoot = false
+		timer.start()
+
+func _on_Timer_timeout() -> void:
+	can_shoot = true

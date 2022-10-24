@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
 [ext_resource path="res://src/Levels/Obstacle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Levels/Level.gd" type="Script" id=4]
 [ext_resource path="res://src/Levels/ObstacleSpawner.tscn" type="PackedScene" id=5]
@@ -31,7 +30,6 @@ shape = SubResource( 2 )
 
 [node name="Player" parent="PlayerNode" instance=ExtResource( 1 )]
 position = Vector2( 408, 480 )
-script = ExtResource( 2 )
 
 [node name="Obstacle" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1696, 824 )

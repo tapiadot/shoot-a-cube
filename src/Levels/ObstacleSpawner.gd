@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var timer: = $Timers
+onready var timer: = $Timer
 
 var Obstacle: = preload("res://src/Levels/Obstacle.tscn")
 var Enemy: = preload("res://src/Actors/Enemy.tscn")

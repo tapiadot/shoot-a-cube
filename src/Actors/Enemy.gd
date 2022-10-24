@@ -12,7 +12,5 @@ func _on_StaticEnemy_body_entered(body: Node) -> void:
 		body.die()
 	if body is Bullet:
 		body.queue_free()
-		explode()
+		queue_free()
 
-func explode():
-	pass
