@@ -9,3 +9,6 @@ func _physics_process(delta: float) -> void:
 func _on_Brick_body_entered(body: Node) -> void:
 	if body is Player and body.has_method("die"):
 		body.die()
+	
+	if body is Bullet:
+		body.queue_free()

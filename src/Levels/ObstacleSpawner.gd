@@ -27,7 +27,6 @@ func spawn_obstacle():
 	else:
 		obstacle.position.y = 1024 - height / 2 + 200
 		enemy.position.y = obstacle.position.y - randi() % 200 - 500
-	print(obstacle.position)
 
 func start():
 	timer.start()

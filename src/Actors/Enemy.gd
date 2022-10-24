@@ -8,4 +8,11 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 
 func _on_StaticEnemy_body_entered(body: Node) -> void:
-	pass # Replace with function body.
+	if body is Player and body.has_method("die"):
+		body.die()
+	if body is Bullet:
+		body.queue_free()
+		explode()
+
+func explode():
+	pass
